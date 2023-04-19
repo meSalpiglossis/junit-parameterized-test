@@ -1,20 +1,37 @@
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Timeout;
 
 import java.security.InvalidParameterException;
 
 public class CalculatorNegativeTest {
 
-    @Test(timeout = 5000, expected = InvalidParameterException.class)
-    public void divideBy0Test() {
-        Calculator calculator = new Calculator();
-        calculator.div(1, 0);
+    Calculator calculator;
+
+    @BeforeEach
+    @Timeout(5)
+    public void setup() {
+        calculator = new Calculator();
     }
 
 
-    @Test(timeout = 5000, expected = InvalidParameterException.class)
+
+    @Test()
+    public void divideBy0Test() {
+        Assertions.assertThrows(InvalidParameterException.class, () -> {
+            calculator.div(1, 0);
+        });
+    }
+
+
+    @Test() //expected = InvalidParameterException.class
     public void sqrtNegativeNumberTest() {
-        Calculator calculator = new Calculator();
-        calculator.sqrt(-1);
+        Assertions.assertThrows(InvalidParameterException.class, () -> {
+            calculator.sqrt(-1);
+        });
+
+
     }
 
 }

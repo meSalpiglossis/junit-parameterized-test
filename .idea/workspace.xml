@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f803cad-dff5-44f8-ba7c-63e876b936e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CalculatorNegativeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CalculatorPositiveTest.java" afterDir="false" />
+    <list default="true" id="7f803cad-dff5-44f8-ba7c-63e876b936e3" name="Changes" comment="Homework 2022-12-04">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CalculatorNegativeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CalculatorNegativeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CalculatorPositiveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CalculatorPositiveTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +43,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
@@ -65,13 +58,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.CalculatorPositiveTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="maxima_hw20221204_junit5" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CalculatorNegativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="maxima_hw20221204_junit5" />
       <option name="PACKAGE_NAME" value="" />
@@ -90,11 +76,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CalculatorPositiveTest.subTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculatorPositiveTest.addTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="maxima_hw20221204_junit5" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CalculatorPositiveTest" />
-      <option name="METHOD_NAME" value="subTest" />
+      <option name="METHOD_NAME" value="addTest(double,double,double)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorPositiveTest.memoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="maxima_hw20221204_junit5" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CalculatorPositiveTest" />
+      <option name="METHOD_NAME" value="memoryTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorPositiveTest.sqrtTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="maxima_hw20221204_junit5" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CalculatorPositiveTest" />
+      <option name="METHOD_NAME" value="sqrtTest(double,double)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,9 +109,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CalculatorPositiveTest" />
+        <item itemvalue="JUnit.CalculatorPositiveTest.addTest" />
         <item itemvalue="JUnit.CalculatorNegativeTest" />
-        <item itemvalue="JUnit.CalculatorPositiveTest.subTest" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CalculatorPositiveTest.sqrtTest" />
+        <item itemvalue="JUnit.CalculatorPositiveTest.memoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -118,6 +125,14 @@
       <option name="presentableId" value="Default" />
       <updated>1681648755225</updated>
     </task>
+    <task id="LOCAL-00001" summary="Homework 2022-12-04">
+      <created>1681651947175</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681651947175</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,5 +145,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Homework 2022-12-04" />
+    <option name="LAST_COMMIT_MESSAGE" value="Homework 2022-12-04" />
   </component>
 </project>

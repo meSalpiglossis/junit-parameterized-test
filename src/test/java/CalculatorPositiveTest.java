@@ -1,68 +1,20 @@
-import com.tngtech.java.junit.dataprovider.DataProvider;
-import com.tngtech.java.junit.dataprovider.DataProviderRunner;
-import com.tngtech.java.junit.dataprovider.UseDataProvider;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
-@RunWith(DataProviderRunner.class)
 public class CalculatorPositiveTest {
 
-    @Test(timeout = 5000)
-    @UseDataProvider("dataForAddTest")
-    public void addTest(double a, double b, double result) {
-        Calculator calculator = new Calculator();
-        Assert.assertEquals(result, calculator.add(a, b), 0);
+    Calculator calculator;
+
+    @BeforeEach
+    @Timeout(5)
+    public void setup() {
+        calculator = new Calculator();
     }
 
-    @Test(timeout = 5000)
-    @UseDataProvider("dataForSubTest")
-    public void subTest(double a, double b, double result) {
-        Calculator calculator = new Calculator();
-        Assert.assertEquals(result, calculator.sub(a, b), 0);
-    }
-
-    @Test(timeout = 5000)
-    @UseDataProvider("dataForMulTest")
-    public void mulTest(double a, double b, double result) {
-        Calculator calculator = new Calculator();
-        Assert.assertEquals(result, calculator.mul(a, b), 0);
-    }
-
-    @Test(timeout = 5000)
-    @UseDataProvider("dataForDivTest")
-    public void divTest(double a, double b, double result) {
-        Calculator calculator = new Calculator();
-        Assert.assertEquals(result, calculator.div(a, b), 0);
-    }
-
-    @Test(timeout = 5000)
-    @UseDataProvider("dataForPowTest")
-    public void powTest(double a, double b, double result) {
-        Calculator calculator = new Calculator();
-        Assert.assertEquals(result, calculator.pow(a, b), 0);
-    }
-
-    @Test(timeout = 5000)
-    @UseDataProvider("dataForSqrtTest")
-    public void sqrtTest(double a, double result) {
-        Calculator calculator = new Calculator();
-        Assert.assertEquals(result, calculator.sqrt(a), 0);
-    }
-
-    @Test(timeout = 5000)
-    public void memoryTest() {
-        Calculator calculator = new Calculator();
-        calculator.add(2, 2); //memory == 4
-        calculator.sub(2); //memory == 2
-        calculator.mul(4); //memory == 8
-        calculator.div(4); //memory == 2
-        calculator.pow(4); //memory == 16
-        Assert.assertEquals(4, calculator.sqrt(), 0);
-    }
-
-
-    @DataProvider
     public static Object[][] dataForAddTest() {
         return new Object[][] {
             {10, 20, 30},
@@ -72,7 +24,12 @@ public class CalculatorPositiveTest {
         };
     }
 
-    @DataProvider
+    @ParameterizedTest
+    @MethodSource("dataForAddTest")
+    public void addTest(double a, double b, double result) {
+        Assertions.assertEquals(result, calculator.add(a, b), 0);
+    }
+
     public static Object[][] dataForSubTest() {
         return new Object[][] {
             {10, 20, -10},
@@ -82,7 +39,12 @@ public class CalculatorPositiveTest {
         };
     }
 
-    @DataProvider
+    @ParameterizedTest
+    @MethodSource("dataForSubTest")
+    public void subTest(double a, double b, double result) {
+        Assertions.assertEquals(result, calculator.sub(a, b), 0);
+    }
+
     public static Object[][] dataForMulTest() {
         return new Object[][] {
             {10, 20, 200},
@@ -92,7 +54,12 @@ public class CalculatorPositiveTest {
         };
     }
 
-    @DataProvider
+    @ParameterizedTest
+    @MethodSource("dataForMulTest")
+    public void mulTest(double a, double b, double result) {
+        Assertions.assertEquals(result, calculator.mul(a, b), 0);
+    }
+
     public static Object[][] dataForDivTest() {
         return new Object[][] {
             {10, 20, 0.5},
@@ -102,7 +69,12 @@ public class CalculatorPositiveTest {
         };
     }
 
-    @DataProvider
+    @ParameterizedTest
+    @MethodSource("dataForDivTest")
+    public void divTest(double a, double b, double result) {
+        Assertions.assertEquals(result, calculator.div(a, b), 0);
+    }
+
     public static Object[][] dataForPowTest() {
         return new Object[][] {
             {3, 2, 9},
@@ -114,12 +86,33 @@ public class CalculatorPositiveTest {
         };
     }
 
-    @DataProvider
+    @ParameterizedTest
+    @MethodSource("dataForPowTest")
+    public void powTest(double a, double b, double result) {
+        Assertions.assertEquals(result, calculator.pow(a, b), 0);
+    }
+
     public static Object[][] dataForSqrtTest() {
         return new Object[][] {
             {4, 2},
             {0, 0},
             {0.25, 0.5},
         };
+    }
+
+    @ParameterizedTest
+    @MethodSource("dataForSqrtTest")
+    public void sqrtTest(double a, double result) {
+        Assertions.assertEquals(result, calculator.sqrt(a), 0);
+    }
+
+    @Test()
+    public void memoryTest() {
+        calculator.add(2, 2); //memory == 4
+        calculator.sub(2); //memory == 2
+        calculator.mul(4); //memory == 8
+        calculator.div(4); //memory == 2
+        calculator.pow(4); //memory == 16
+        Assertions.assertEquals(4, calculator.sqrt(), 0);
     }
 }
